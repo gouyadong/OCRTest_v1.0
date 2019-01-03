@@ -23,7 +23,8 @@ import java.net.URLEncoder;
 public class LicenseNumber {
 
     /**
-     * 上传文件
+     * 上传车牌号图片
+     *
      * @param file
      * @return
      */
@@ -36,21 +37,14 @@ public class LicenseNumber {
             String param = URLEncoder.encode("image", Constants.UTF8) + "=" + URLEncoder.encode(base64, Constants.UTF8);
             String result = HttpUtil.post(Constants.BAIDU_AI_LICENSE_PLATE, Constants.BAIDU_AI_TOKEN, param);
             String number = JSONObject.parseObject(result).getJSONObject("words_result").getString("number");
-            System.out.println("识别出的车牌号为："+number);
+            System.out.println("识别出的车牌号为：" + number);
             JSONObject object = new JSONObject();
-            object.put("code",0);
-            object.put("number",number);
+            object.put("code", 0);
+            object.put("number", number);
             return object;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-
-    @RequestMapping("/test")
-    @ResponseBody
-    public String test(){
-        return  "success";
-    }
-
 }

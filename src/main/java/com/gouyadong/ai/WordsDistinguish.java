@@ -33,7 +33,7 @@ public class WordsDistinguish {
      * @param file
      * @return
      */
-    @RequestMapping("/uploadFile")
+    @RequestMapping("/accurate_basic")
     @ResponseBody
     public Object uploadFile(MultipartFile file) {
         try {

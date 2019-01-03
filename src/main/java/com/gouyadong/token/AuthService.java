@@ -1,5 +1,6 @@
 package com.gouyadong.token;
 
+import com.gouyadong.commoms.Constants;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -39,9 +40,8 @@ public class AuthService {
      * @return assess_token：24.6644da40f952e6f2a81d8099c3ebf7dc.2592000.1548585047.282335-15297118
      */
     public static String getAuth(String ak, String sk) {
-        //获取token地址
-        String authHost = "https://aip.baidubce.com/oauth/2.0/token?";
-        String getAccessTokenUrl = authHost
+        String getAccessTokenUrl = Constants.BAIDU_AI_TOKEN_HOST
+                + "?"
                 + "grant_type=client_credentials" //grant_type为固定参数
                 + "&client_id=" + ak //百度云官网获取的 API Key
                 + "&client_secret=" + sk; //百度云官网获取的 Securet Key

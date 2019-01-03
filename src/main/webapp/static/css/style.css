@@ -2,36 +2,44 @@
     width: 1100px;
     margin: 0 auto;
 }
+
 .title {
     font-size: 24px;
     border-left: 5px solid #009688;
     padding: 2px 0 2px 8px;
     margin-bottom: 10px;
 }
+
 .img-box {
     width: 500px;
-    min-height: 500px;
+    min-height: 350px;
     padding: 20px;
     border: 1px dashed #009688;
     border-radius: 10px;
 }
+
 #demo1 {
     width: 100%;
 }
+
 .layui-form-item {
     margin-top: 30px;
 }
+
 .layui-form-label {
     width: 100px;
     padding-left: 0;
     text-align: left;
 }
+
 #demoText {
     line-height: 50px;
 }
+
 #test1 {
     margin-top: 30px;
 }
+
 .layui-form-item .layui-input-inline {
     width: 426px;
 }

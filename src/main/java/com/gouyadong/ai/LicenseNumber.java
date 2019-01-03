@@ -28,7 +28,7 @@ public class LicenseNumber {
      * @param file
      * @return
      */
-    @RequestMapping("/uploadFile")
+    @RequestMapping("/license_plate")
     @ResponseBody
     public Object uploadFile(MultipartFile file) {
         try {

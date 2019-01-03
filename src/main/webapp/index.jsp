@@ -25,7 +25,8 @@
     <div class="layui-form-item">
         <label class="layui-form-label">车牌识别结果：</label>
         <div class="layui-input-inline">
-            <input type="text" id="number" required lay-verify="required" placeholder="车牌识别结果" autocomplete="off" class="layui-input">
+            <input type="text" id="number" required lay-verify="required" placeholder="车牌识别结果" autocomplete="off"
+                   class="layui-input">
         </div>
     </div>
 </div>
@@ -38,7 +39,7 @@
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#test1'
-            ,url: '/licenseNumber/uploadFile'
+            ,url: '/licenseNumber/license_plate'
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){

@@ -30,15 +30,13 @@ public class LicenseNumber {
     @RequestMapping("/uploadFile")
     @ResponseBody
     public Object uploadFile(MultipartFile file) {
-
         try {
             byte[] b = file.getBytes();
             String base64 = Base64Util.encode(b);
-            String param = URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(base64, "UTF-8");
-            String result = HttpUtil.post(Constants.BAIDU_AI_LICENSE, Constants.BAIDU_AI_TOKEN, param);
+            String param = URLEncoder.encode("image", Constants.UTF8) + "=" + URLEncoder.encode(base64, Constants.UTF8);
+            String result = HttpUtil.post(Constants.BAIDU_AI_LICENSE_PLATE, Constants.BAIDU_AI_TOKEN, param);
             String number = JSONObject.parseObject(result).getJSONObject("words_result").getString("number");
             System.out.println("识别出的车牌号为："+number);
-
             JSONObject object = new JSONObject();
             object.put("code",0);
             object.put("number",number);

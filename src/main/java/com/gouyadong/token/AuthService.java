@@ -77,20 +77,4 @@ public class AuthService {
         }
         return null;
     }
-
-
-    public static void main(String[] args) {
-        String auth = getAuth();
-        System.out.println("auth==>" + auth);
-        try {
-            InputStream inputStream = new FileInputStream("");
-
-
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 }

@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/layui/layui-v2.2.5/layui/css/layui.css"  media="all">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
 </head>
 <body>
 <div class="content">
-    <h3 class="title">百度AI-车牌识别</h3>
+    <h3 class="title">百度AI-文字识别</h3>
     <div class="img-box">
         <div class="layui-upload">
             <div class="layui-upload-list">
@@ -21,11 +22,11 @@
         </div>
     </div>
 
-    <button type="button" class="layui-btn" id="test1">上传车牌图片</button>
-    <div class="layui-form-item">
-        <label class="layui-form-label">车牌识别结果：</label>
-        <div class="layui-input-inline">
-            <input type="text" id="number" required lay-verify="required" placeholder="车牌识别结果" autocomplete="off" class="layui-input">
+    <button type="button" class="layui-btn" id="test1">上传文字图片</button>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">文字识别结果：</label>
+        <div class="layui-input-inline" style="width:430px;">
+            <textarea id="words" style="height: 350px;" placeholder="文字识别结果" class="layui-textarea"></textarea>
         </div>
     </div>
 </div>
@@ -38,7 +39,7 @@
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#test1'
-            ,url: '/licenseNumber/uploadFile'
+            ,url: '/wordsDistinguish/uploadFile'
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -51,7 +52,7 @@
                     return layer.msg('上传失败');
                 }
                 //上传成功
-                $('#number').val(res.number);
+                $('#words').val(res.words);
             }
             ,error: function(){
                 //演示失败状态，并实现重传

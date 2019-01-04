@@ -17,6 +17,8 @@ public class Constants {
     public static final String BAIDU_AI_ACCURATE_BASIC="https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic";
     //火车票识别地址
     public static final String BAIDU_AI_TRAIN_TICKET="https://aip.baidubce.com/rest/2.0/ocr/v1/train_ticket";
+    //银行卡识别地址
+    public static final String BAIDU_AI_BANKCARD="https://aip.baidubce.com/rest/2.0/ocr/v1/bankcard";
     //编码
     public static final String UTF8="UTF-8";
 
